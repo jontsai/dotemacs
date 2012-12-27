@@ -611,7 +611,7 @@
 (autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
 (autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
 (autoload 'php-mode "php-mode" "PHP mode" t)
-(autoload 'python-mode "python-mode" "Python mode" t)
+;(autoload 'python-mode "python-mode" "Python mode" t)
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
 (autoload 'visual-basic-mode "visual-basic-mode" "Visual" t)
 (autoload 'yaml-mode "yaml-mode" "YAML" t)
