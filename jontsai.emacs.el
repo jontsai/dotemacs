@@ -591,6 +591,8 @@
      ;;("\\.cs$" . csharp-mode)
      ;; JavaScript mode
      ("\\.js$" . javascript-mode)
+     ;; CSS mode
+     ("\\.less$" . css-mode)
      ;; PHP mode
      ("\\.php$" . php-mode)
      ("\\.gne$" . php-mode) ; Flickr "Game Never Ending"
