@@ -335,9 +335,9 @@
 (set-face-foreground 'highlight                    "Navy")
 (set-face-background 'highlight                    "Gold")
 (set-face-foreground 'italic                       "Blue")
-(set-face-foreground 'modeline                     "Gold")
-(set-face-background 'modeline                     "Navy")
-(make-face-bold      'modeline)
+;(set-face-foreground 'modeline                     "Gold")
+;(set-face-background 'modeline                     "Navy")
+;(make-face-bold      'modeline)
 (set-face-foreground 'region                       "Blue") ;White
 (set-face-background 'region                       "Yellow") ;Navy
 (set-face-background 'secondary-selection          "LightBlue")
