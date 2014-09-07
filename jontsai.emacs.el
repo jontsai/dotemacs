@@ -1,12 +1,11 @@
 ;============================================================================
-; jontsai.emacs.el
+; jontsai.emacs.el (was: JTemacs.el)
+; By: Jonathan Tsai
+; http://jontsai.com
 ;
-; JTemacs.el
-; Jonathan Tsai
-; http://www.ocf.berkeley.edu/~jontsai/
 ; 2009.04.24 Added autosave and backup back in after a huge crash :(
-; 2004.09.12 emacs-lisp file can be byte compiled for faster load
 ; 2005.04.23 included PHP, Verilog, Visual, VB modes
+; 2004.09.12 emacs-lisp file can be byte compiled for faster load
 ;
 ; Original RSemacs.emacs
 ; by: Richard Shiao
@@ -335,9 +334,9 @@
 (set-face-foreground 'highlight                    "Navy")
 (set-face-background 'highlight                    "Gold")
 (set-face-foreground 'italic                       "Blue")
-;(set-face-foreground 'modeline                     "Gold")
-;(set-face-background 'modeline                     "Navy")
-;(make-face-bold      'modeline)
+;;(set-face-foreground 'modeline                     "Gold")
+;;(set-face-background 'modeline                     "Navy")
+;;(make-face-bold      'modeline)
 (set-face-foreground 'region                       "Blue") ;White
 (set-face-background 'region                       "Yellow") ;Navy
 (set-face-background 'secondary-selection          "LightBlue")
