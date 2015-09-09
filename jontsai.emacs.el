@@ -585,9 +585,8 @@
    '(;; Make .h and .H files default to C++ mode rather than C mode.
      ("\\.H$" . c++-mode)
      ("\\.h$" . c++-mode)
-     ;; Use c++-mode for C#
-     ("\\.cs$" . c++-mode)
-     ;;("\\.cs$" . csharp-mode)
+     ;; C# mode
+     ("\\.cs$" . csharp-mode)
      ;; JavaScript mode
      ("\\.js$" . javascript-mode)
      ;; CSS mode

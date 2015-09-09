@@ -1,0 +1,3 @@
+[submodule "csharp-mode"]
+	path = csharp-mode
+	url = git@github.com:josteink/csharp-mode.git

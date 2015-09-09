@@ -6,3 +6,6 @@ mkdir -p ${INSTALL_DIR}
 
 cp highlight-current-line.elc ${INSTALL_DIR}/
 cp jontsai.emacs.elc ~/.emacs.elc
+
+# language modes
+cp csharp-mode/csharp-mode.elc ${INSTALL_DIR}/
