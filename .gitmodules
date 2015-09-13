@@ -1,3 +1,6 @@
 [submodule "csharp-mode"]
 	path = csharp-mode
 	url = git@github.com:josteink/csharp-mode.git
+[submodule "php-mode"]
+	path = php-mode
+	url = git@github.com:ejmr/php-mode.git

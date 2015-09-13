@@ -8,4 +8,11 @@ cp highlight-current-line.elc ${INSTALL_DIR}/
 cp jontsai.emacs.elc ~/.emacs.elc
 
 # language modes
-cp csharp-mode/csharp-mode.elc ${INSTALL_DIR}/
+LANGUAGE_MODES="csharp php"
+for lang in $LANGUAGE_MODES
+do
+    cmd="cp ${lang}-mode/${lang}-mode.elc ${INSTALL_DIR}/"
+    echo $cmd
+    $cmd
+done
+
