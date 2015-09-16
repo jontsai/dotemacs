@@ -4,7 +4,7 @@
 
 - Highlight Current Line
   - http://www.emacswiki.org/emacs/HighlightCurrentLine
-  - Using the tried and true: `[highlight-current-line.el](http://www.emacswiki.org/emacs/highlight-current-line.el)`
+  - Using the tried and true: [`highlight-current-line.el`](http://www.emacswiki.org/emacs/highlight-current-line.el)
 
 ## Languages
 
