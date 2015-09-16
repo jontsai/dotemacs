@@ -1,6 +1,9 @@
 [submodule "csharp-mode"]
 	path = csharp-mode
-	url = git@github.com:josteink/csharp-mode.git
+	url = git@github.com:jontsai/csharp-mode.git
 [submodule "php-mode"]
 	path = php-mode
-	url = git@github.com:ejmr/php-mode.git
+	url = git@github.com:jontsai/php-mode.git
+[submodule "editorconfig-emacs"]
+	path = editorconfig-emacs
+	url = git@github.com:jontsai/editorconfig-emacs.git
