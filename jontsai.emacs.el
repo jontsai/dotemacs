@@ -596,6 +596,9 @@
      ("\\.gne$" . php-mode) ; Flickr "Game Never Ending"
      ;; Python mode
      ("\\.py$" . python-mode)
+     ;; Scala mode
+     ("\\.sbt$" . scala-mode)
+     ("\\.scala$" . scala-mode)
      ;; Visual Basic mode
      ("\\.vbs$" . visual-basic-mode)
      ("\\.vb$" . visual-basic-mode)
@@ -612,6 +615,7 @@
 (autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
 (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(autoload 'python-mode "python-mode" "Python mode" t)
+(autoload 'scala-mode "scala-mode2" "Scala mode" t)
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
 (autoload 'visual-basic-mode "visual-basic-mode" "Visual" t)
 (autoload 'yaml-mode "yaml-mode" "YAML" t)
