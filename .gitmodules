@@ -7,3 +7,6 @@
 [submodule "editorconfig-emacs"]
 	path = editorconfig-emacs
 	url = git@github.com:jontsai/editorconfig-emacs.git
+[submodule "yaml-mode"]
+	path = yaml-mode
+	url = git@github.com:jontsai/yaml-mode.git
