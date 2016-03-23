@@ -587,6 +587,8 @@
      ("\\.h$" . c++-mode)
      ;; C# mode
      ("\\.cs$" . csharp-mode)
+     ;; Coffee mode
+     ("\\.coffee$" . coffee-mode)
      ;; JavaScript mode
      ("\\.js$" . javascript-mode)
      ;; CSS mode
@@ -612,6 +614,7 @@
 
 ;; Load programming modes only when needed
 (autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
+(autoload 'coffee-mode "coffee-mode" "CoffeeScript mode" t)
 (autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
 (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(autoload 'python-mode "python-mode" "Python mode" t)

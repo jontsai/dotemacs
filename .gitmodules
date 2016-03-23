@@ -13,3 +13,6 @@
 [submodule "scala-mode"]
 	path = scala-mode
 	url = git@github.com:jontsai/emacs-scala-mode.git
+[submodule "coffee-mode"]
+	path = coffee-mode
+	url = git@github.com:jontsai/coffee-mode.git

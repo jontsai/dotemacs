@@ -7,7 +7,7 @@ mkdir -p ${INSTALL_DIR}
 cp jontsai.emacs.elc ~/.emacs.elc
 
 # language modes
-LANGUAGE_MODES="csharp php scala yaml"
+LANGUAGE_MODES="csharp coffee php scala yaml"
 for lang in $LANGUAGE_MODES
 do
     if [ $lang == 'scala' ]
