@@ -291,6 +291,9 @@
 ; Show matching parentheses upon cursor-over
 (show-paren-mode 1)
 
+; Turn on line numbers globally
+(global-linum-mode 1)
+
 (if (member window-system '(x w32))
     (let ((setting 'laptop))
       (cond ((eq setting 'laptop)
