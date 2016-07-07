@@ -19,11 +19,9 @@ do
     fi
 done
 
-# miscellaneous files
-EL_FILES="highlight-current-line editorconfig-emacs/editorconfig"
-for elfile in $EL_FILES
+# miscellaneous .elc files
+ELC_FILES="highlight-current-line editorconfig-emacs/editorconfig"
+for elcfile in $ELC_FILES
 do
-    cp -v ${elfile}.elc  ${INSTALL_DIR}/
+    cp -v ${elcfile}.elc  ${INSTALL_DIR}/
 done
-
-
