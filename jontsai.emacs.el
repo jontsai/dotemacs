@@ -970,6 +970,16 @@
 ;(desktop-read)
 ;---------------------------------------------------------------------------
 
+;--- Editorconfig -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2016/07/06
+; Source: https://github.com/editorconfig/editorconfig-emacs
+(require 'editorconfig)
+(editorconfig-mode 1)
+
+;---------------------------------------------------------------------------
+
+
 ; If execution reaches the end, then success!
 (message "                                                    ")
 (message "    <----<---<--<-<<  YES!!! >>->-->--->---->       ")
