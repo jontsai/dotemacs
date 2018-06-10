@@ -3,6 +3,7 @@
 ; By: Jonathan Tsai
 ; http://jontsai.com
 ;
+; 2018.06.10 Commented some stuff out for Emacs 26 compatibility
 ; 2009.04.24 Added autosave and backup back in after a huge crash :(
 ; 2005.04.23 included PHP, Verilog, Visual, VB modes
 ; 2004.09.12 emacs-lisp file can be byte compiled for faster load
@@ -343,17 +344,19 @@
 (set-face-foreground 'region                       "Blue") ;White
 (set-face-background 'region                       "Yellow") ;Navy
 (set-face-background 'secondary-selection          "LightBlue")
-(set-face-foreground 'show-paren-match-face        "Gold")
-(set-face-background 'show-paren-match-face        "Navy")
+; TODO: invalid in Emacs 26
+;(set-face-foreground 'show-paren-match-face        "Gold")
+;(set-face-background 'show-paren-match-face        "Navy")
 
 ; "... Down with the Red and White!
 ;  California's out for a victory..."
 ;  From: The "Stanfurd Jonah" Fight Song
 ;        Ted Haley, Class of 1915
 ; Following settings signal a parentheses error.
-(set-face-background 'show-paren-mismatch-face     "Red") ;Red
-(set-face-foreground 'show-paren-mismatch-face     "White") ;White
-(make-face-bold      'show-paren-mismatch-face)
+;; TODO: invalid in Emacs 26
+;; (set-face-background 'show-paren-mismatch-face     "Red") ;Red
+;; (set-face-foreground 'show-paren-mismatch-face     "White") ;White
+;; (make-face-bold      'show-paren-mismatch-face)
 
 ; Calendar highlighting colors
 (setq calendar-load-hook
