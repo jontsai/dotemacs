@@ -359,6 +359,7 @@
 ;; (make-face-bold      'show-paren-mismatch-face)
 
 ; Calendar highlighting colors
+(defvar calendar-load-hook nil)
 (setq calendar-load-hook
       '(lambda ()  
          (set-face-foreground 'diary-face          "MediumBlue") ;MediumBlue
@@ -386,6 +387,7 @@
 (setq column-number-mode t)
 
 ; Show clock in mode line in AM/PM mode
+(defvar display-time-24hr-format nil)
 (setq display-time-24hr-format nil)
 (setq display-time-day-and-date t)
 (display-time)
@@ -642,6 +644,7 @@
 (autoload 'pymacs-load "pymacs" nil t)
 
 ;; Colorize keywords for additional programming modes
+(defvar enable-font-lock-mode nil)
 (setq enable-font-lock-mode '(lambda () (font-lock-mode 1)))
 
 (mapc (lambda (progmode) (add-hook progmode enable-font-lock-mode))
@@ -657,11 +660,16 @@
 (setq tab-width 2)
 
 ;; Set up C/C++ indentation
+(defvar c-basic-offset)
 (setq c-basic-offset 2)
+(defvar c-tab-always-indent nil)
 (setq c-tab-always-indent nil)
+(defvar c-indent-level)
 (setq c-indent-level 2)
 ;(define-key c-mode-map "\r" 'newline-and-indent)
+(defvar c-continued-statement-offset)
 (setq c-continued-statement-offset 2)
+(defvar c-argdecl-indent)
 (setq c-argdecl-indent 0)
 
 
@@ -730,6 +738,7 @@
 (global-set-key [S-iso-lefttab] 'dabbrev-completion)
 
 ; Delete key deletes forward
+(defvar delete-key-deletes-forward)
 (setq delete-key-deletes-forward t)
 
 ; C-Backspace deletes word
