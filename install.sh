@@ -7,12 +7,12 @@ mkdir -p ${INSTALL_DIR}
 cp jontsai.emacs.elc ~/.emacs.elc
 
 # language modes
-LANGUAGE_MODES="csharp coffee php scala yaml"
+LANGUAGE_MODES="apex csharp coffee php scala yaml"
 for lang in $LANGUAGE_MODES
 do
     if [ $lang == 'scala' ]
     then
-        cp -v scala-mode/*.el* ${INSTALL_DIR}/
+        cp -v scala-mode2/*.el* ${INSTALL_DIR}/
     else
         MODE_FILE=${lang}-mode/${lang}-mode.elc
         cp -v ${MODE_FILE} ${INSTALL_DIR}/
@@ -20,7 +20,7 @@ do
 done
 
 # miscellaneous .elc files
-ELC_FILES="highlight-current-line editorconfig-emacs/editorconfig"
+ELC_FILES="highlight-current-line editorconfig/editorconfig"
 for elcfile in $ELC_FILES
 do
     cp -v ${elcfile}.elc  ${INSTALL_DIR}/

@@ -591,6 +591,10 @@
    '(;; Make .h and .H files default to C++ mode rather than C mode.
      ("\\.H$" . c++-mode)
      ("\\.h$" . c++-mode)
+     ;; SFDC Apex mode
+     ("\\.cls$" . apex-mode) ; Apex class
+     ("\\.trg$" . apex-mode) ; Apex trigger
+     ("\\.page$" . apex-mode) ; Visualforce page
      ;; C# mode
      ("\\.cs$" . csharp-mode)
      ;; Coffee mode
@@ -619,6 +623,7 @@
    auto-mode-alist))
 
 ;; Load programming modes only when needed
+(autoload 'apex-mode "apex-mode" "Major mode for editing SFDC Apex code." t)
 (autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
 (autoload 'coffee-mode "coffee-mode" "CoffeeScript mode" t)
 (autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
