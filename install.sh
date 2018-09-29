@@ -20,7 +20,7 @@ do
 done
 
 # miscellaneous .elc files
-ELC_FILES="highlight-current-line editorconfig/editorconfig"
+ELC_FILES="highlight-current-line editorconfig/editorconfig editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch"
 for elcfile in $ELC_FILES
 do
     cp -v ${elcfile}.elc  ${INSTALL_DIR}/

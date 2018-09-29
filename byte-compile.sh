@@ -17,7 +17,7 @@ do
     popd
 done
 
-FILES="highlight-current-line jontsai.emacs"
+FILES="highlight-current-line jontsai.emacs editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch"
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file
