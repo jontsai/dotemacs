@@ -23,3 +23,11 @@
   - [PHP](https://www.php.net/) - `php-mode`
   - [Scala](https://scala-lang.org/) - `scala-mode2`
   - [YAML](https://yaml.org/) - `yaml-mode`
+
+## Contributing
+
+Pull requests are welcome!
+
+## License
+
+See `LICENSE.md`
