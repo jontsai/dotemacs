@@ -3,6 +3,8 @@
 ; By: Jonathan Tsai
 ; https://www.jontsai.com
 ;
+; 2019.05.08 Adds diary-face and holiday-face hack
+; 2019.05.08 Add MELPA (Milkypostman's Emacs Lisp Package Archive)
 ; 2019.05.07 Put Autosave and Backups directory inside of user-emacs-directory
 ; 2018.06.10 Commented some stuff out for Emacs 26 compatibility
 ; 2009.04.24 Added autosave and backup back in after a huge crash :(
@@ -396,6 +398,10 @@ There are two things you can do about this warning:
          (set-face-foreground 'diary-face          "MediumBlue") ;MediumBlue
          (set-face-background 'holiday-face        "SlateBlue") ;SlateBlue
          (set-face-foreground 'holiday-face        "White"))) ;White
+
+; quick hack to define diary-face, holiday-face
+(copy-face 'bold 'diary-face)
+(copy-face 'bold 'holiday-face)
 
 ;--- END COLORING ---
 
