@@ -256,10 +256,22 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 
 ; Org mode
-; https://orgmode.org/elpa.html
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
-
 (package-initialize)
+
+;---------------------------------------------------------------------------
+
+
+;--- Org mode ------------------------------------------------------
+; By:     jontsai
+; Date:   2019.05.08
+; Source: http://org-trello.github.io/usage.html#automatic-org-trello-files-in-emacs
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name (current-buffer))))
+              (when (and filename (string= "trello" (file-name-extension filename)))
+              (org-trello-mode)))))
 
 ;---------------------------------------------------------------------------
 
@@ -657,6 +669,8 @@ There are two things you can do about this warning:
      ;; Scala mode
      ("\\.sbt$" . scala-mode)
      ("\\.scala$" . scala-mode)
+     ;; org-trello major mode for all .trello files
+     ("\\.trello$" . org-mode)
      ;; Visual Basic mode
      ("\\.vbs$" . visual-basic-mode)
      ("\\.vb$" . visual-basic-mode)
