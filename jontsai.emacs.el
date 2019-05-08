@@ -1,8 +1,9 @@
 ;============================================================================
 ; jontsai.emacs.el (was: JTemacs.el)
 ; By: Jonathan Tsai
-; http://jontsai.com
+; https://www.jontsai.com
 ;
+; 2019.05.07 Put Autosave and Backups directory inside of user-emacs-directory
 ; 2018.06.10 Commented some stuff out for Emacs 26 compatibility
 ; 2009.04.24 Added autosave and backup back in after a huge crash :(
 ; 2005.04.23 included PHP, Verilog, Visual, VB modes
@@ -490,10 +491,13 @@
 
 (setq auto-save-interval 500)
 
+;; https://www.emacswiki.org/emacs/AutoSave
+;;
 ;; Put autosave files (ie #foo#) in one place, *not*
 ;; scattered all over the file system!
 ;;(defvar autosave-dir (concat "/tmp/emacs_autosaves/" (user-login-name) "/"))
-(defvar autosave-dir (concat (getenv "HOME") "/.emacs/autosaves/"))
+;;(defvar autosave-dir (concat (getenv "HOME") "/.emacs.d/autosaves/"))
+(defvar autosave-dir (concat user-emacs-directory "autosaves"))
 
 (make-directory autosave-dir t)
 
@@ -507,11 +511,15 @@
     (expand-file-name
      (concat "#%" (buffer-name) "#")))))
 
+;; https://www.emacswiki.org/emacs/BackupDirectory
+;;
 ;; Put backup files (ie foo~) in one place too. (The backup-directory-alist
 ;; list contains regexp=>directory mappings; filenames matching a regexp are
 ;; backed up in the corresponding directory. Emacs will mkdir it if necessary.)
 ;;(defvar backup-dir (concat "/tmp/emacs_backups/" (user-login-name) "/"))
-(defvar backup-dir (concat (getenv "HOME") "/.emacs/backups/"))
+;; $HOME = (getenv "HOME") ;; e.g. /home/jontsai
+;;(defvar backup-dir (concat (getenv "HOME") "/.emacs.d/backups"))
+(defvar backup-dir (concat user-emacs-directory "backups"))
 (setq backup-directory-alist (list (cons "." backup-dir)))
 
 ;; End Autosave/Backup section
