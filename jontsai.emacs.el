@@ -231,6 +231,36 @@
 ;---------------------------------------------------------------------------
 
 
+;--- MELPA and Packages------------------------------------------------------
+; By:     jontsai
+; Date:   2019.05.08
+; Source: https://melpa.org/#/getting-started
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (when no-ssl
+    (warn "\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again."))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+
+; Org mode
+; https://orgmode.org/elpa.html
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+
+(package-initialize)
+
+;---------------------------------------------------------------------------
+
 
 ;--- Starting Emacs --------------------------------------------------------
 ; By:     Richard Shiao
@@ -866,6 +896,7 @@
 (define-key global-map [mouse-2] 'mouse-major-mode-menu)
 ;---------------------------------------------------------------------------
 
+
 ;--- Mail ------------------------------------------------------------------
 ; By:     Richard Shiao
 ; Date:   2000/06/01
@@ -878,7 +909,6 @@
 ;---------------------------------------------------------------------------
 
 
-
 ;--- Snippet Functions follow: ---------------------------------------------
 ; By:     Richard Shiao
 ; Date:   2000/06/01
@@ -888,6 +918,7 @@
 ; Just make sure there are no key-binding conflicts with
 ; other parts of your file.  It's a good idea to keep these
 ; snippets intact.
+
 
 ;--- "Buffer Switching" ----------------------------------------------------
 ;     By:       Young-il Choo
@@ -950,6 +981,7 @@
   (yic-next (buffer-list)))
 ;---------------------------------------------------------------------------
 
+
 ;--- "Open .emacs with Shift-f3" -------------------------------------------
 ;     By: Richard Shiao
 ;     Description: Opens the init file .emacs with S-f3
@@ -982,6 +1014,7 @@
 
 ; (global-set-key [f12]  'toggle-kbd-macro-recording)
 
+
 ;--- "Saving the Emacs Desktop" --------------------------------------------
 ;     By:         Richard Shiao
 ;     Purpose:    Open files from last session upon starting.
@@ -994,6 +1027,7 @@
 ;(desktop-load-default)
 ;(desktop-read)
 ;---------------------------------------------------------------------------
+
 
 ;--- Editorconfig -----------------------------------------------------------------
 ; By:     jontsai
