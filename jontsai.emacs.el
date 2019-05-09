@@ -3,6 +3,7 @@
 ; By: Jonathan Tsai
 ; https://www.jontsai.com
 ;
+; 2019.05.09 Disable menu-bar-mode
 ; 2019.05.09 Overwrite some default Helm key mappings for tab completion
 ; 2019.05.08 Add Helm keybindings
 ; 2019.05.08 Add diary-face and holiday-face hack
@@ -457,6 +458,10 @@ There are two things you can do about this warning:
 
 ; Number of kills to keep in memory
 (setq kill-ring-max 50)
+
+; disable menu-bar-mode for extra screen real estate
+; https://www.emacswiki.org/emacs/MenuBar
+(menu-bar-mode -1)
 
 ;;**********************************
 ;; Begin Autosave/Backup section
