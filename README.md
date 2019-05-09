@@ -1,4 +1,8 @@
-# Collection of dotemacs (*.el) files
+# Opinionated collection of the dotemacs (*.el) files
+
+## Prerequisites
+
+An Emacs Lisp Package Archive such as [MELPA (Milkypostman's Emacs Lisp Archive)](https://melpa.org) is required.
 
 ## Installation
 
@@ -11,6 +15,14 @@
 - [EditorConfig](https://editorconfig.org/)
 - [Highlight Current Line](http://www.emacswiki.org/emacs/HighlightCurrentLine)
   - Using the tried and true: [`highlight-current-line.el`](http://www.emacswiki.org/emacs/highlight-current-line.el)
+
+## Dependency Emacs Packages
+
+For each of these, run `M-x package-install <package-name>`
+
+- [Emacs-Helm](https://github.com/emacs-helm/helm) (`helm`)
+- [Org mode](https://orgmode.org/) (`org`)
+  - [org-trello](http://org-trello.github.io/) (`org-trello`)
 
 ## Languages
 
