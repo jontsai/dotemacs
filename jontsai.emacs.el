@@ -819,8 +819,12 @@ There are two things you can do about this warning:
 (global-set-key "\C-o" "\ev")                       ; scroll up
 
 
-; C-c * shortcuts
-; removed by Jonathan Tsai 2003/05/16
+; C-c * shortcuts for common operations
+(global-set-key "\C-ci"    'indent-region)
+(global-set-key "\C-co"    'comment-region)
+(global-set-key "\C-cu"    'uncomment-region)
+(global-set-key "\C-cs"    'sort-lines)
+; disabled by Jonathan Tsai 2003/05/16
 ;(global-set-key "\C-cx"    "\C-w")                  ; cut
 ;(global-set-key "\C-c\C-x" "\C-w")                  ; cut
 ;(global-set-key "\C-cc"    "\C-w\C-y")              ; copy
@@ -831,11 +835,8 @@ There are two things you can do about this warning:
 ;(global-set-key "\C-c\C-a" [C-home C-S-end])        ; select all
 ;(global-set-key "\C-cw"    'compare-windows)        ;
 ;(global-set-key "\C-cg"    'goto-line)              ;
-;(global-set-key "\C-ci"    'indent-region)          ;
 ;(global-set-key "\C-c\C-e" 'center-line)            ;
-;(global-set-key "\C-co"    'comment-region)         ;
 ;(global-set-key "\C-cb"    'universal-argument)     ; I use this for S-f8 below
-                                         
 
 ; Function Keys
 ;;(global-set-key [f1]    'help)                      ;
