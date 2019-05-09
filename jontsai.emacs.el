@@ -3,6 +3,7 @@
 ; By: Jonathan Tsai
 ; https://www.jontsai.com
 ;
+; 2019.05.09 Overwrite some default Helm key mappings for tab completion
 ; 2019.05.08 Add Helm keybindings
 ; 2019.05.08 Add diary-face and holiday-face hack
 ; 2019.05.08 Add MELPA (Milkypostman's Emacs Lisp Package Archive)
@@ -1062,12 +1063,24 @@ There are two things you can do about this warning:
 
 ;--- Helm -----------------------------------------------------------------
 ; By:     jontsai
-; Date:   2019.05.08
+; Date:   2019.05.09
 ; Source: https://github.com/emacs-helm/helm/wiki
 
-(global-set-key (kbd "M-x") #'helm-M-x)
-(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(with-eval-after-load "helm"
+  ; keybindings to make Helm awesome
+  (global-set-key (kbd "M-x") #'helm-M-x)
+  (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+  (global-set-key (kbd "C-x C-f") #'helm-find-files)
+  ; keybindings to override default Helm behavior and restore customary "tab completion"
+  ; https://emacs.stackexchange.com/a/38235/16731
+  ;(bind-key "M-Y" #'helm-end-of-buffer helm-map)
+  (define-key helm-map (kbd "TAB") #'helm-execute-persistent-action)
+  (define-key helm-map (kbd "<tab>") #'helm-execute-persistent-action)
+  (define-key helm-map (kbd "C-z") #'helm-select-action))
+
+; enable Helm to to trigger custom keybindings, then immediately disable
+(helm-mode 1)
+(helm-mode 0)
 
 ;---------------------------------------------------------------------------
 
