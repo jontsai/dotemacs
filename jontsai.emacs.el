@@ -3,6 +3,7 @@
 ; By: Jonathan Tsai
 ; https://www.jontsai.com
 ;
+; 2019.05.09 Lots of yummy shortcut keys
 ; 2019.05.09 Disable menu-bar-mode
 ; 2019.05.09 Overwrite some default Helm key mappings for tab completion
 ; 2019.05.08 Add Helm keybindings
@@ -824,6 +825,7 @@ There are two things you can do about this warning:
 (global-set-key "\C-co"    'comment-region)
 (global-set-key "\C-cu"    'uncomment-region)
 (global-set-key "\C-cs"    'sort-lines)
+(global-set-key "\C-cq"    'query-replace)
 ; disabled by Jonathan Tsai 2003/05/16
 ;(global-set-key "\C-cx"    "\C-w")                  ; cut
 ;(global-set-key "\C-c\C-x" "\C-w")                  ; cut
