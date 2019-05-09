@@ -195,7 +195,7 @@ highlight-current-line.el: ** This package requires overlays.  Abort"))))
     (defmacro defgroup (&rest args)
       nil)
     (defmacro defcustom (var value doc &rest args)
-      (` (defvar (, var) (, value) (, doc))))))
+      `(defvar (, var) (, value) (, doc)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Variables
