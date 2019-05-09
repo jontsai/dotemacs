@@ -3,7 +3,8 @@
 ; By: Jonathan Tsai
 ; https://www.jontsai.com
 ;
-; 2019.05.08 Adds diary-face and holiday-face hack
+; 2019.05.08 Add Helm keybindings
+; 2019.05.08 Add diary-face and holiday-face hack
 ; 2019.05.08 Add MELPA (Milkypostman's Emacs Lisp Package Archive)
 ; 2019.05.07 Put Autosave and Backups directory inside of user-emacs-directory
 ; 2018.06.10 Commented some stuff out for Emacs 26 compatibility
@@ -1055,6 +1056,18 @@ There are two things you can do about this warning:
 ; Source: https://github.com/editorconfig/editorconfig-emacs
 (require 'editorconfig)
 (editorconfig-mode 1)
+
+;---------------------------------------------------------------------------
+
+
+;--- Helm -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2019.05.08
+; Source: https://github.com/emacs-helm/helm/wiki
+
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 ;---------------------------------------------------------------------------
 
