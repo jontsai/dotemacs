@@ -40,6 +40,10 @@ For each of these, run `M-x package-install <package-name>`
 
 Pull requests are welcome!
 
+## Guides to Learning Emacs
+
+- Check out the wiki section: https://github.com/jontsai/dotemacs/wiki/Emacs-Tips
+
 ## License
 
 See `LICENSE.md`
