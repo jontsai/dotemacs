@@ -1,4 +1,4 @@
-# Opinionated collection of the dotemacs (*.el) files
+# Opinionated collection of the best dotemacs (*.el) files
 
 ## Prerequisites
 
