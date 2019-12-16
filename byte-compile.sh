@@ -8,7 +8,7 @@
 
 # workaround: provide list of Emacs modules to compile
 
-EMACS_MODULES="apex-mode coffee-mode csharp-mode editorconfig php-mode scala-mode2 yaml-mode"
+EMACS_MODULES="apex-mode coffee-mode csharp-mode editorconfig lua-mode php-mode scala-mode2 yaml-mode"
 
 for module in $EMACS_MODULES
 do

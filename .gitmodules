@@ -19,3 +19,6 @@
 [submodule "apex-mode"]
 	path = apex-mode
 	url = git@github.com:jontsai/apex-mode.git
+[submodule "lua-mode"]
+	path = lua-mode
+	url = git@github.com:jontsai/lua-mode.git

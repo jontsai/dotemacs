@@ -62,7 +62,7 @@
 ;                - Set word wrapping width
 ;                - Toggle Horizontal scroll bars (currently commented out)
 ;                - Scroll down 1 line at a time rather than a huge section
-;                - Don't add more lines when scrolling past end of buffer  
+;                - Don't add more lines when scrolling past end of buffer
 ;                - Resize mini-buffer automatically
 ;                - Substitute yes/no responses to y/n
 ;                - Specify tab width
@@ -143,7 +143,7 @@
 ;      Created:  Richard Shiao
 ;                IntroToEECS@yahoo.com
 ;                2000/06/01
-;      Modified:  
+;      Modified:
 ;
 ; If you are accessing this file indirectly, there is a good chance that it
 ; has been modified.  To see the original file, official releases, and
@@ -410,7 +410,7 @@ There are two things you can do about this warning:
 ; Calendar highlighting colors
 (defvar calendar-load-hook nil)
 (setq calendar-load-hook
-      '(lambda ()  
+      '(lambda ()
          (set-face-foreground 'diary-face          "MediumBlue") ;MediumBlue
          (set-face-background 'holiday-face        "SlateBlue") ;SlateBlue
          (set-face-foreground 'holiday-face        "White"))) ;White
@@ -624,7 +624,7 @@ There are two things you can do about this warning:
 ;; the number of lines of continuity when scrolling a window.
 (setq next-screen-context-lines 1)
 
-; Don't add more lines when scrolling past end of buffer  
+; Don't add more lines when scrolling past end of buffer
 (setq next-line-add-newlines nil)
 
 ; Resize mini-buffer automatically
@@ -652,8 +652,8 @@ There are two things you can do about this warning:
 ;; visual-basic-mode.el
 
 (setq auto-mode-alist
-  (append 
-   
+  (append
+
    '(;; Make .h and .H files default to C++ mode rather than C mode.
      ("\\.H$" . c++-mode)
      ("\\.h$" . c++-mode)
@@ -667,8 +667,10 @@ There are two things you can do about this warning:
      ("\\.coffee$" . coffee-mode)
      ;; JavaScript mode
      ("\\.js$" . javascript-mode)
-     ;; CSS mode
+     ;; LESS to use CSS mode
      ("\\.less$" . css-mode)
+     ;; Lua mode
+     ("\\.lua$" . lua-mode)
      ;; PHP mode
      ("\\.php$" . php-mode)
      ("\\.gne$" . php-mode) ; Flickr "Game Never Ending"
@@ -695,6 +697,7 @@ There are two things you can do about this warning:
 (autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
 (autoload 'coffee-mode "coffee-mode" "CoffeeScript mode" t)
 (autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
+(autoload 'lua-mode "lua-mode" "Lua mode" t)
 (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(autoload 'python-mode "python-mode" "Python mode" t)
 (autoload 'scala-mode "scala-mode2" "Scala mode" t)
@@ -780,8 +783,8 @@ There are two things you can do about this warning:
 ;-- Setting:
 
 ;; ****Begin UC key bindings
-(global-set-key "\eg" 'goto-line)   
-(global-set-key "\eW" 'copy-region-as-kill) 
+(global-set-key "\eg" 'goto-line)
+(global-set-key "\eW" 'copy-region-as-kill)
 ;; (global-set-key "\^w" 'backward-kill-word)
 ;; (global-set-key "\eq" 'query-replace)
 ;; (global-set-key "\eQ" 'query-replace-regexp)
@@ -914,12 +917,12 @@ There are two things you can do about this warning:
 
 ; Select from the completion list with Mouse-1
 (add-hook 'completion-list-mode-hook
-  '(lambda() (define-key completion-list-mode-map [down-mouse-1]  
+  '(lambda() (define-key completion-list-mode-map [down-mouse-1]
                'mouse-choose-completion)))
 
 ; Select from the Buffer Menu with Mouse-1
 (add-hook 'buffer-menu-mode-hook
-  '(lambda() (define-key Buffer-menu-mode-map [down-mouse-1]  
+  '(lambda() (define-key Buffer-menu-mode-map [down-mouse-1]
                'Buffer-menu-mouse-select)))
 
 ; Mouse-2 shows context sensitive menu
@@ -964,7 +967,7 @@ There are two things you can do about this warning:
 
 (defun yic-ignore (str)
   (or
-   ;;buffers I don't want to switch to  
+   ;;buffers I don't want to switch to
    (string-match "\\*Buffer List\\*" str)
    (string-match "^TAGS" str)
    (string-match "^\\*Messages\\*$" str)
@@ -972,14 +975,14 @@ There are two things you can do about this warning:
    (string-match "^ " str)
 
    ;;Test to see if the window is visible on an existing visible frame.
-   ;;Because I can always ALT-TAB to that visible frame, I never want to  
-   ;;Ctrl-TAB to that buffer in the current frame.  That would cause  
+   ;;Because I can always ALT-TAB to that visible frame, I never want to
+   ;;Ctrl-TAB to that buffer in the current frame.  That would cause
    ;;a duplicate top-level buffer inside two frames.
-   (memq str                 
-         (mapcar  
-          (lambda (x)  
-            (buffer-name  
-             (window-buffer  
+   (memq str
+         (mapcar
+          (lambda (x)
+            (buffer-name
+             (window-buffer
               (frame-selected-window x))))
           (visible-frame-list)))
    ))
