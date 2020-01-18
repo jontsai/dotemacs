@@ -1096,6 +1096,17 @@ There are two things you can do about this warning:
 ;---------------------------------------------------------------------------
 
 
+;--- isort -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2020.01.17
+; Source: https://github.com/paetzke/py-isort.el
+
+(require 'py-isort)
+(add-hook 'before-save-hook 'py-isort-before-save)
+
+;---------------------------------------------------------------------------
+
+
 ; If execution reaches the end, then success!
 (message "                                                    ")
 (message "    <----<---<--<-<<  YES!!! >>->-->--->---->       ")

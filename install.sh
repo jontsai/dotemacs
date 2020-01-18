@@ -20,8 +20,8 @@ do
 done
 
 # miscellaneous .elc files
-ELC_FILES="highlight-current-line editorconfig/editorconfig editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch"
+ELC_FILES="highlight-current-line editorconfig/editorconfig editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch py-isort/py-isort"
 for elcfile in $ELC_FILES
 do
-    cp -v ${elcfile}.elc  ${INSTALL_DIR}/
+    cp -v ${elcfile}.elc ${INSTALL_DIR}/
 done

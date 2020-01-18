@@ -17,9 +17,10 @@ do
     popd
 done
 
-FILES="highlight-current-line jontsai.emacs editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch"
+FILES="highlight-current-line jontsai.emacs editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch py-isort/py-isort"
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file
-    emacs -batch -L ./ -L editorconfig -f batch-byte-compile ./ $file.el
+    LOAD_PATH="-L ./ -L editorconfig -L py-isort"
+    emacs -batch ${LOAD_PATH} -f batch-byte-compile ./ $file.el
 done
