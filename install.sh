@@ -4,9 +4,10 @@ INSTALL_DIR=~/.site-lisp
 
 mkdir -p ${INSTALL_DIR}
 
-cp dotemacs.emacs.elc ~/.emacs.elc
+# Install primary dotemacs file
+cp -v dotemacs.emacs.elc ~/.emacs.elc
 
-# language modes
+# Install Language Modes
 LANGUAGE_MODES="apex csharp coffee lua php scala yaml"
 for lang in $LANGUAGE_MODES
 do
@@ -19,7 +20,7 @@ do
     fi
 done
 
-# miscellaneous .elc files
+# Miscellaneous .elc files
 ELC_FILES="highlight-current-line editorconfig/editorconfig editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch py-isort/py-isort"
 for elcfile in $ELC_FILES
 do

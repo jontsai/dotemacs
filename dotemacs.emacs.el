@@ -1,7 +1,7 @@
 ;============================================================================
 ; dotemacs.emacs.el (fka: jontsai.emacs.el, JTemacs.el)
 ; By: Jonathan Tsai
-; https://www.jontsai.com
+; https://github.com/jontsai/dotemacs
 ;
 ; Revision History
 ; ----------------
@@ -369,8 +369,14 @@ There are two things you can do about this warning:
 ; Source: www.geocities.com/IntroToEECS
 ; Colors and font updated by Jonathan Tsai 2003/05/16
 
+
 (set-background-color "Black")
 (set-foreground-color "Green")
+
+;; (add-to-list 'default-frame-alist
+;;     '(background-color . "Black")
+;;     '(foreground-color . "Green"))
+
 (set-cursor-color "CornflowerBlue")
 (set-face-foreground 'font-lock-builtin-face       "MediumBlue") ;MediumBlue
 (set-face-foreground 'font-lock-comment-face       "Orange") ;DarkGreen
@@ -1114,7 +1120,10 @@ There are two things you can do about this warning:
 ; Date:   2020.04.30
 ; Attemps to load `USER.el[c]`
 
-(catch 'missing-file (load (getenv "USER")))
+
+(condition-case nil
+    (load (getenv "USER"))
+    (error nil))
 
 
 ;---------------------------------------------------------------------------
