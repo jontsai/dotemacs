@@ -4,7 +4,7 @@ INSTALL_DIR=~/.site-lisp
 
 mkdir -p ${INSTALL_DIR}
 
-cp jontsai.emacs.elc ~/.emacs.elc
+cp dotemacs.emacs.elc ~/.emacs.elc
 
 # language modes
 LANGUAGE_MODES="apex csharp coffee lua php scala yaml"

@@ -1,8 +1,12 @@
 ;============================================================================
-; jontsai.emacs.el (was: JTemacs.el)
+; dotemacs.emacs.el (fka: jontsai.emacs.el, JTemacs.el)
 ; By: Jonathan Tsai
 ; https://www.jontsai.com
 ;
+; Revision History
+; ----------------
+; 2020.04.30 Load user-specific emacs
+; 2020.01.17 Automatically run isort on Python files
 ; 2019.05.09 Lots of yummy shortcut keys
 ; 2019.05.09 Disable menu-bar-mode
 ; 2019.05.09 Overwrite some default Helm key mappings for tab completion
@@ -1103,6 +1107,15 @@ There are two things you can do about this warning:
 
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
+
+
+;--- user-specific emacs -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2020.04.30
+; Attemps to load `USER.el[c]`
+
+(catch 'missing-file (load (getenv "USER")))
+
 
 ;---------------------------------------------------------------------------
 
