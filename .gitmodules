@@ -11,7 +11,7 @@
 	path = yaml-mode
 	url = git@github.com:jontsai/yaml-mode.git
 [submodule "scala-mode"]
-	path = scala-mode2
+	path = scala-mode
 	url = git@github.com:jontsai/emacs-scala-mode.git
 [submodule "coffee-mode"]
 	path = coffee-mode
