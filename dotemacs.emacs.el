@@ -684,6 +684,8 @@ There are two things you can do about this warning:
      ;; PHP mode
      ("\\.php$" . php-mode)
      ("\\.gne$" . php-mode) ; Flickr "Game Never Ending"
+     ;; Puppet mode
+     ("\\.pp$" . puppet-mode)
      ;; Python mode
      ("\\.py$" . python-mode)
      ;; Scala mode
@@ -710,6 +712,7 @@ There are two things you can do about this warning:
 (autoload 'lua-mode "lua-mode" "Lua mode" t)
 (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(autoload 'python-mode "python-mode" "Python mode" t)
+(autoload 'puppet-mode "puppet-mode" "Puppet mode" t)
 (autoload 'scala-mode "scala-mode2" "Scala mode" t)
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
 (autoload 'visual-basic-mode "visual-basic-mode" "Visual" t)

@@ -8,7 +8,7 @@ mkdir -p ${INSTALL_DIR}
 cp -v dotemacs.emacs.elc ~/.emacs.elc
 
 # Install Language Modes
-LANGUAGE_MODES="apex csharp coffee lua php scala yaml"
+LANGUAGE_MODES="apex csharp coffee lua php puppet scala yaml"
 for lang in $LANGUAGE_MODES
 do
     if [ $lang == 'scala' ]

@@ -25,3 +25,6 @@
 [submodule "py-isort"]
 	path = py-isort
 	url = git@github.com:jontsai/py-isort.el.git
+[submodule "puppet-mode"]
+	path = puppet-mode
+	url = git@github.com:jontsai/puppet-mode.git
