@@ -18,6 +18,10 @@ An Emacs Lisp Package Archive such as [MELPA (Milkypostman's Emacs Lisp Archive)
 
 ## Dependency Emacs Packages
 
+Fetch the latest MELPA package list:
+
+  `M-x package-refresh-contents`
+
 For each of these, run `M-x package-install <package-name>`
 
 - [Emacs-Helm](https://github.com/emacs-helm/helm) (`helm`)
