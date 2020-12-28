@@ -647,6 +647,12 @@ There are two things you can do about this warning:
 ;; highlight-current-line.el/elc must be installed
 (require 'highlight-current-line)
 
+;; prettier - https://github.com/prettier/prettier-emacs
+(require 'prettier-js)
+
+(add-hook 'js-jsx-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+
 ;; End appearances
 ;;**********************************
 

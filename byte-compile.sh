@@ -17,10 +17,10 @@ do
     popd
 done
 
-FILES="highlight-current-line dotemacs.emacs editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch editorconfig/editorconfig py-isort/py-isort"
+FILES="highlight-current-line dotemacs.emacs editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch editorconfig/editorconfig prettier-js/prettier-js py-isort/py-isort"
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file
-    LOAD_PATH="-L ./ -L editorconfig -L py-isort"
+    LOAD_PATH="-L ./ -L editorconfig -L prettier-js -L py-isort"
     emacs -batch ${LOAD_PATH} -f batch-byte-compile ./ $file.el
 done

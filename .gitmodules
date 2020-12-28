@@ -28,3 +28,6 @@
 [submodule "puppet-mode"]
 	path = puppet-mode
 	url = https://github.com/jontsai/puppet-mode.git
+[submodule "prettier-js"]
+	path = prettier-js
+	url = https://github.com/jontsai/prettier-emacs
