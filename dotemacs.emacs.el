@@ -7,14 +7,15 @@
 ; ----------------
 ; 2022.08.14 Provide (C-c l) as an alternate to (C-SPC) for set-mark-command
 ; 2022.03.29 Provide (C-c m) as an alternate to (C-SPC) for set-mark-command
+; 2020.12.27 Adds prettier-js
 ; 2020.04.30 Load user-specific dotemacs
 ; 2020.01.17 Automatically run isort on Python files
+; 2019.05.09 Overwrite some default Helm key mappings for tab completion
 ; 2019.05.09 Lots of yummy shortcut keys
 ; 2019.05.09 Disable menu-bar-mode
-; 2019.05.09 Overwrite some default Helm key mappings for tab completion
-; 2019.05.08 Add Helm keybindings
 ; 2019.05.08 Add diary-face and holiday-face hack
 ; 2019.05.08 Add MELPA (Milkypostman's Emacs Lisp Package Archive)
+; 2019.05.08 Add Helm keybindings
 ; 2019.05.07 Put Autosave and Backups directory inside of user-emacs-directory
 ; 2018.06.10 Commented some stuff out for Emacs 26 compatibility
 ; 2009.04.24 Added autosave and backup back in after a huge crash :(
