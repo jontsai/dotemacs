@@ -18,18 +18,17 @@
 ; 2009.04.24 Added autosave and backup back in after a huge crash :(
 ; 2005.04.23 included PHP, Verilog, Visual, VB modes
 ; 2004.09.12 emacs-lisp file can be byte compiled for faster load
+; 2001.01.20 Modified Documentation for www.geocities.com/IntroToEECS/
+; 2000.06.01 Original RSemacs.emacs by Richard Shiao
+; 1998.xx.xx local modifications merged with cs61a class master emacs startup file
 ;
-; Original RSemacs.emacs
-; by: Richard Shiao
-; June 1, 2000
-;
-; local modifications:
-; merged with cs61a class master emacs startup file
-; Copyright (C) 1998 Regents of California
-; Author: Unknown & Jonathan Tsai
+; Authors:
+; ???? - 1998: Unknown - Copyright (C) 1998 Regents of California
+; 1998 - 2001: Richard Shiao
+; 2004 - present: Jonathan Tsai
 ;
 ; Documentation
-; Modified: 12:10am 2001-01-20 for www.geocities.com/IntroToEECS/
+;
 ;============================================================================
 ; Purpose:  This .emacs file was created from examining many examples.
 ;           It is mainly for personal use but includes features that I
