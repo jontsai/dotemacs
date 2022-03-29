@@ -5,7 +5,8 @@
 ;
 ; Revision History
 ; ----------------
-; 2020.04.30 Load user-specific emacs
+; 2022.03.29 Provide (C-c m) as an alternate to (C-SPC) for set-mark-command
+; 2020.04.30 Load user-specific dotemacs
 ; 2020.01.17 Automatically run isort on Python files
 ; 2019.05.09 Lots of yummy shortcut keys
 ; 2019.05.09 Disable menu-bar-mode
@@ -847,6 +848,7 @@ There are two things you can do about this warning:
 
 ; C-c * shortcuts for common operations
 (global-set-key "\C-ci"    'indent-region)
+(global-set-key "\C-cm"    'set-mark-command)        ; for when the OS overrides ^-SPC
 (global-set-key "\C-co"    'comment-region)
 (global-set-key "\C-cu"    'uncomment-region)
 (global-set-key "\C-cs"    'sort-lines)
