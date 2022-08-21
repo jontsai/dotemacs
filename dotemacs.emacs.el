@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2022.08.14 Provide (C-c l) as an alternate to (C-SPC) for set-mark-command
 ; 2022.03.29 Provide (C-c m) as an alternate to (C-SPC) for set-mark-command
 ; 2020.04.30 Load user-specific dotemacs
 ; 2020.01.17 Automatically run isort on Python files
@@ -849,6 +850,7 @@ There are two things you can do about this warning:
 ; C-c * shortcuts for common operations
 (global-set-key "\C-ci"    'indent-region)
 (global-set-key "\C-cm"    'set-mark-command)        ; for when the OS overrides ^-SPC
+(global-set-key "\C-cl"    'set-mark-command)        ; for when the OS overrides ^-SPC + another Emacs program overrides 'C-c m'
 (global-set-key "\C-co"    'comment-region)
 (global-set-key "\C-cu"    'uncomment-region)
 (global-set-key "\C-cs"    'sort-lines)
