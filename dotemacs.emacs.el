@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2022.08.24 Always include MELPA and ELPA
 ; 2022.08.14 Provide (C-c l) as an alternate to (C-SPC) for set-mark-command
 ; 2022.03.29 Provide (C-c m) as an alternate to (C-SPC) for set-mark-command
 ; 2020.12.27 Adds prettier-js
@@ -259,11 +260,10 @@ There are two things you can do about this warning:
 1. Install an Emacs version that does support SSL and be safe.
 2. Remove this warning from your init file so you won't see it again."))
   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  ;;(add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
   (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/"))))
 
 ; Org mode
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
