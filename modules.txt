@@ -1,0 +1,9 @@
+apex-mode
+coffee-mode
+csharp-mode
+editorconfig
+lua-mode
+php-mode
+puppet-mode
+scala-mode
+yaml-mode

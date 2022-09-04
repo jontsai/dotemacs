@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2022.09.04 Re-sets name macro keybinding, load user customizations
 ; 2022.08.24 Always include MELPA and ELPA
 ; 2022.08.14 Provide (C-c l) as an alternate to (C-SPC) for set-mark-command
 ; 2022.03.29 Provide (C-c m) as an alternate to (C-SPC) for set-mark-command
@@ -913,11 +914,10 @@ There are two things you can do about this warning:
 
 
 ;-- Unsetting: (Things I don't use, but may press by mistake)
-(global-unset-key "\C-xf")
-(global-unset-key "\C-x\C-k")
+(global-unset-key "\C-xf") ; set fill column to
+;(global-unset-key "\C-x\C-k") ; name macro \C-x\C-kn
 ;(global-unset-key "\C-t") ; transpose characters
-; move to beginning of line re-enabled by jonathan tsai
-;(global-unset-key "\C-a")
+;(global-unset-key "\C-a") ; move to beginning of line
 (global-unset-key [S-backspace]) ;;;;;;;;;;;;;;;;;;;; doesn't work yet
 
 ;-- Resetting:
@@ -1045,14 +1045,18 @@ There are two things you can do about this warning:
 ;--- "Open .emacs with Shift-f3" -------------------------------------------
 ;     By: Richard Shiao
 ;     Description: Opens the init file .emacs with S-f3
-;     Modified: Richard Shiao 2000/06/03
+;     History:
+;     - Updated path by jontsai 2022.09.04
+;     - Modified by Richard Shiao 2000.06.03
 ;---------------------------------------------------------------------------
-;(defun open-dot-emacs ()
-;  "Opening .emacs"
-;  (interactive) ;this makes the function a command too
-;  (find-file "~/RSemacs.emacs"))
-;
-;(global-set-key [S-f3]  'open-dot-emacs)
+(defun open-dot-emacs ()
+    "Opening .emacs"
+    (interactive) ;this makes the function a command too
+    ;(find-file "~/RSemacs.emacs")
+    (find-file "~/code/dotemacs/dotemacs.emacs.el")
+    )
+
+(global-set-key [S-f3]  'open-dot-emacs)
 
 ;******************************************************************************************
 ;--- "Toggle Keyboard Macro Recording with f12" ----------------------------
@@ -1142,6 +1146,20 @@ There are two things you can do about this warning:
     (load (getenv "USER"))
     (error nil))
 
+
+;--- load custom directory with saved macros -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2022.09.04
+; Load custom dotemacs directory along with saved macros
+;
+; See: https://www.thegeekstuff.com/2010/07/emacs-macro-tutorial-how-to-record-and-play/
+; 1. Record macro
+; 2. Name macro (C-x C-k n)
+; 3. Open macros.el
+; 4. Store macro: M-x insert-kbd-macro
+
+(require 'load-directory)
+(load-directory "~/.emacs.d/custom")
 
 ;---------------------------------------------------------------------------
 

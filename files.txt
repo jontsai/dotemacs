@@ -1,0 +1,10 @@
+highlight-current-line
+load-directory
+macros
+dotemacs.emacs
+editorconfig/editorconfig-core
+editorconfig/editorconfig-core-handle
+editorconfig/editorconfig-fnmatch
+editorconfig/editorconfig
+prettier-js/prettier-js
+py-isort/py-isort

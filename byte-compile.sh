@@ -8,7 +8,7 @@
 
 # workaround: provide list of Emacs modules to compile
 
-EMACS_MODULES="apex-mode coffee-mode csharp-mode editorconfig lua-mode php-mode puppet-mode scala-mode yaml-mode"
+EMACS_MODULES=`cat modules.txt`
 
 for module in $EMACS_MODULES
 do
@@ -17,7 +17,7 @@ do
     popd
 done
 
-FILES="highlight-current-line dotemacs.emacs editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch editorconfig/editorconfig prettier-js/prettier-js py-isort/py-isort"
+FILES=`cat files.txt`
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file

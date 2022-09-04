@@ -1,14 +1,16 @@
 #!/bin/bash
 
 INSTALL_DIR=~/.site-lisp
+CUSTOM_DIR=~/.emacs.d/custom
 
 mkdir -p ${INSTALL_DIR}
+mkdir -p ${CUSTOM_DIR}
 
 # Install primary dotemacs file
 cp -v dotemacs.emacs.elc ~/.emacs.elc
 
 # Install Language Modes
-LANGUAGE_MODES="apex csharp coffee lua php puppet scala yaml"
+LANGUAGE_MODES=`cat language_modes.txt`
 for lang in $LANGUAGE_MODES
 do
     if [ $lang == 'scala' ]
@@ -22,8 +24,15 @@ done
 
 
 # Miscellaneous .elc files
-ELC_FILES="highlight-current-line editorconfig/editorconfig editorconfig/editorconfig-core editorconfig/editorconfig-core-handle editorconfig/editorconfig-fnmatch prettier-js/prettier-js py-isort/py-isort"
+
+ELC_FILES=`cat elc_files.txt`
 for elcfile in $ELC_FILES
 do
     cp -v ${elcfile}.elc ${INSTALL_DIR}/
+done
+
+CUSTOM_ELC_FILES=`cat custom_elc_files.txt`
+for elcfile in $CUSTOM_ELC_FILES
+do
+    cp -v ${elcfile}.elc ${CUSTOM_DIR}/
 done

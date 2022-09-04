@@ -1,0 +1,8 @@
+highlight-current-line
+load-directory
+editorconfig/editorconfig
+editorconfig/editorconfig-core
+editorconfig/editorconfig-core-handle
+editorconfig/editorconfig-fnmatch
+prettier-js/prettier-js
+py-isort/py-isort
