@@ -6,5 +6,6 @@ editorconfig/editorconfig-core
 editorconfig/editorconfig-core-handle
 editorconfig/editorconfig-fnmatch
 editorconfig/editorconfig
+blacken/blacken
 prettier-js/prettier-js
 py-isort/py-isort

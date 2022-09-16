@@ -31,3 +31,6 @@
 [submodule "prettier-js"]
 	path = prettier-js
 	url = https://github.com/jontsai/prettier-emacs
+[submodule "blacken"]
+	path = blacken
+	url = https://github.com/jontsai/blacken.git

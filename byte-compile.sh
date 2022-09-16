@@ -21,6 +21,6 @@ FILES=`cat files.txt`
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file
-    LOAD_PATH="-L ./ -L editorconfig -L prettier-js -L py-isort"
+    LOAD_PATH="-L ./ -L blacken -L editorconfig -L prettier-js -L py-isort"
     emacs -batch ${LOAD_PATH} -f batch-byte-compile ./ $file.el
 done

@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2022.09.16 Adds Python Black support via blacken
 ; 2022.09.04 Re-sets name macro keybinding, load user customizations
 ; 2022.08.24 Always include MELPA and ELPA
 ; 2022.08.14 Provide (C-c l) as an alternate to (C-SPC) for set-mark-command
@@ -948,7 +949,7 @@ There are two things you can do about this warning:
                'mouse-choose-completion)))
 
 ; Select from the Buffer Menu with Mouse-1
-(add-hook 'buffer-menu-mode-hook
+(add-hook 'Buffer-menu-mode-hook
   '(lambda() (define-key Buffer-menu-mode-map [down-mouse-1]
                'Buffer-menu-mouse-select)))
 
@@ -1136,6 +1137,15 @@ There are two things you can do about this warning:
 (add-hook 'before-save-hook 'py-isort-before-save)
 
 
+;--- black -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2022.09.16
+; Source: https://github.com/paetzke/py-isort.el
+
+(require 'blacken)
+(add-hook 'python-mode-hook 'blacken-mode)
+
+
 ;--- user-specific emacs -----------------------------------------------------------------
 ; By:     jontsai
 ; Date:   2020.04.30
@@ -1160,6 +1170,27 @@ There are two things you can do about this warning:
 
 (require 'load-directory)
 (load-directory "~/.emacs.d/custom")
+
+
+;--- Set Custom Variables -----------------------------------------------------------------
+; Docs: https://www.gnu.org/software/emacs/manual/html_node/eintr/defcustom.html
+
+(custom-set-variables
+    ; Black
+    ;
+    ; See:
+    ; - pypyroject.toml => [tool.black]
+    ; - https://github.com/jontsai/blacken/tree/master#customization
+    ;
+    ; line-length
+    ; '(blacken-line-length 80)
+    ; target-version
+    ; '(blacken-target-version "py39"
+    ; skip-string-normalization
+    ; '(blacken-skip-string-normalization t)
+    ; '(blacken-fast-unsafe nil)
+    '(blacken-only-if-project-is-blackened t)
+    )
 
 ;---------------------------------------------------------------------------
 

@@ -1,3 +1,4 @@
+blacken/blacken
 highlight-current-line
 load-directory
 editorconfig/editorconfig
