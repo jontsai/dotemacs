@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2022.10.26 Binds (C-c b) to manually invoke 'blacken-buffer
 ; 2022.09.16 Adds Python Black support via blacken
 ; 2022.09.04 Re-sets name macro keybinding, load user customizations
 ; 2022.08.24 Always include MELPA and ELPA
@@ -851,6 +852,7 @@ There are two things you can do about this warning:
 
 
 ; C-c * shortcuts for common operations
+(global-set-key "\C-cb"    'blacken-buffer)          ; for when blacken-on-save somehow doesn't work
 (global-set-key "\C-ci"    'indent-region)
 (global-set-key "\C-cm"    'set-mark-command)        ; for when the OS overrides ^-SPC
 (global-set-key "\C-cl"    'set-mark-command)        ; for when the OS overrides ^-SPC + another Emacs program overrides 'C-c m'
