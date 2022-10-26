@@ -5,7 +5,7 @@
 ;
 ; Revision History
 ; ----------------
-; 2022.10.26 Binds (C-c b) to manually invoke 'blacken-buffer
+; 2022.10.25 Binds (C-c b) to manually invoke 'blacken-buffer
 ; 2022.09.16 Adds Python Black support via blacken
 ; 2022.09.04 Re-sets name macro keybinding, load user customizations
 ; 2022.08.24 Always include MELPA and ELPA
