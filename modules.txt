@@ -1,9 +1,12 @@
 apex-mode
+async
 coffee-mode
 csharp-mode
 editorconfig
+helm
 lua-mode
 php-mode
+popup
 puppet-mode
 scala-mode
 yaml-mode
