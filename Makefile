@@ -5,6 +5,7 @@ update:
 
 compile:
 	./byte-compile.sh
+	cd helm && make
 
 install:
 	./install.sh
