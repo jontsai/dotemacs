@@ -34,3 +34,12 @@
 [submodule "blacken"]
 	path = blacken
 	url = https://github.com/jontsai/blacken.git
+[submodule "helm"]
+	path = helm
+	url = https://github.com/jontsai/helm
+[submodule "async"]
+	path = async
+	url = https://github.com/jontsai/emacs-async
+[submodule "popup"]
+	path = popup
+	url = https://github.com/jontsai/popup-el
