@@ -6,7 +6,7 @@ editorconfig/editorconfig
 editorconfig/editorconfig-core
 editorconfig/editorconfig-core-handle
 editorconfig/editorconfig-fnmatch
-helm/helm
+helm/helm*.elc
 popup/popup
 prettier-js/prettier-js
 py-isort/py-isort

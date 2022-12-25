@@ -28,7 +28,11 @@ done
 ELC_FILES=`cat elc_files.txt`
 for elcfile in $ELC_FILES
 do
-    cp -v ${elcfile}.elc ${INSTALL_DIR}/
+    if [ "${elcfile: -4}" != ".elc" ]
+    then
+        elcfile="${elcfile}.elc"
+    fi
+    cp -v ${elcfile} ${INSTALL_DIR}/
 done
 
 CUSTOM_ELC_FILES=`cat custom_elc_files.txt`
