@@ -8,4 +8,5 @@ php-mode
 popup
 puppet-mode
 scala-mode
+typescript-mode
 yaml-mode

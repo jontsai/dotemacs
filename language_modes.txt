@@ -5,4 +5,5 @@ lua
 php
 puppet
 scala
+typescript
 yaml

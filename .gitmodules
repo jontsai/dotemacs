@@ -43,3 +43,6 @@
 [submodule "popup"]
 	path = popup
 	url = https://github.com/jontsai/popup-el
+[submodule "typescript-mode"]
+	path = typescript-mode
+	url = https://github.com/jontsai/typescript.el

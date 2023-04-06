@@ -656,6 +656,7 @@ There are two things you can do about this warning:
 (require 'prettier-js)
 
 (add-hook 'js-jsx-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 
 ;; End appearances
@@ -690,6 +691,9 @@ There are two things you can do about this warning:
      ;;("\\.js$" . javascript-mode)  ;; replaced by js-jsx-mode
      ("\\.js$" . js-jsx-mode)
      ("\\.jsx$" . js-jsx-mode)
+     ;; TypeScript mode
+     ("\\.ts$" . typescript-mode)
+     ("\\.tsx$" . typescript-mode)
      ;; LESS to use CSS mode
      ("\\.less$" . css-mode)
      ;; Lua mode
@@ -721,13 +725,14 @@ There are two things you can do about this warning:
 (autoload 'apex-mode "apex-mode" "Major mode for editing SFDC Apex code." t)
 (autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
 (autoload 'coffee-mode "coffee-mode" "CoffeeScript mode" t)
-(autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
+;(autoload 'javascript-mode "javascript-mode" "JavaScript mode" t)
 ;(autoload 'js-jsx-mode "js-jsx-mode" "Javascript + JSX mode" t)  ;; built-in to Emacs
 (autoload 'lua-mode "lua-mode" "Lua mode" t)
 (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(autoload 'python-mode "python-mode" "Python mode" t)  ;; built-in to Emacs
 (autoload 'puppet-mode "puppet-mode" "Puppet mode" t)
 (autoload 'scala-mode "scala-mode2" "Scala mode" t)
+(autoload 'typescript-mode "typescript-mode" "TypeScript mode" t)
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
 (autoload 'visual-basic-mode "visual-basic-mode" "Visual" t)
 (autoload 'yaml-mode "yaml-mode" "YAML" t)
