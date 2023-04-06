@@ -28,15 +28,26 @@ done
 ELC_FILES=`cat elc_files.txt`
 for elcfile in $ELC_FILES
 do
-    if [ "${elcfile: -4}" != ".elc" ]
+    # if [ "${elcfile: -4}" == ".elc" ]
+    if [[ ${elcfile} == *.elc ]]
     then
-        elcfile="${elcfile}.elc"
+        # glob pattern or already has .elc extension, do not append .elc extension
+        f=${elcfile}
+    else
+        f="${elcfile}.elc"
     fi
-    cp -v ${elcfile} ${INSTALL_DIR}/
+    cp -v $f ${INSTALL_DIR}/
 done
 
 CUSTOM_ELC_FILES=`cat custom_elc_files.txt`
 for elcfile in $CUSTOM_ELC_FILES
 do
-    cp -v ${elcfile}.elc ${CUSTOM_DIR}/
+    if [[ ${elcfile} == *.elc ]]
+    then
+        # glob pattern or already has .elc extension, do not append .elc extension
+        f=${elcfile}
+    else
+        f=${elcfile}.elc
+    fi
+    cp -v $f ${CUSTOM_DIR}/
 done
