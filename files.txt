@@ -1,6 +1,5 @@
 highlight-current-line
 load-directory
-macros
 dotemacs.emacs
 editorconfig/editorconfig-core
 editorconfig/editorconfig-core-handle
