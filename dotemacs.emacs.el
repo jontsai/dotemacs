@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2024.02.21 In Emacs >= v28, use (global-display-line-numbers-mode) instead of (global-linum-mode)
 ; 2022.10.25 Binds (C-c b) to manually invoke 'blacken-buffer
 ; 2022.09.16 Adds Python Black support via blacken
 ; 2022.09.04 Re-sets name macro keybinding, load user customizations
@@ -351,7 +352,9 @@ There are two things you can do about this warning:
 (show-paren-mode 1)
 
 ; Turn on line numbers globally
-(global-linum-mode 1)
+(if (running-at-least 28 0)
+    (global-display-line-numbers-mode)
+    (global-linum-mode 1))
 
 (if (member window-system '(x w32))
     (let ((setting 'laptop))
