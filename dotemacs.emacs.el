@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2024.02.28 Adds Flycheck
 ; 2024.02.21 In Emacs >= v28, use (global-display-line-numbers-mode) instead of (global-linum-mode)
 ; 2022.10.25 Binds (C-c b) to manually invoke 'blacken-buffer
 ; 2022.09.16 Adds Python Black support via blacken
@@ -1154,6 +1155,20 @@ There are two things you can do about this warning:
 
 (require 'blacken)
 (add-hook 'python-mode-hook 'blacken-mode)
+
+
+;--- flycheck -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.02.28
+; Source: https://github.com/flycheck/flycheck
+; Fork: https://github.com/jontsai/emacs-flycheck
+
+(global-flycheck-mode +1)
+
+;; (use-package flycheck
+;;     :ensure t
+;;     :config
+;;       (add-hook 'after-init-hook #'global-flycheck-mode))
 
 
 ;--- user-specific emacs -----------------------------------------------------------------

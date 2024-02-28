@@ -46,3 +46,6 @@
 [submodule "typescript-mode"]
 	path = typescript-mode
 	url = https://github.com/jontsai/typescript.el
+[submodule "flycheck"]
+	path = flycheck
+	url = https://github.com/jontsai/emacs-flycheck
