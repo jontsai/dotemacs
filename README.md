@@ -24,9 +24,12 @@ Fetch the latest MELPA package list:
 
 For each of these, run `M-x package-install <package-name>`
 
-- [Emacs-Helm](https://github.com/emacs-helm/helm) (`helm`)
+- [Dash](https://github.com/magnars/dash.el) (`dash`)
+- [Helm](https://github.com/emacs-helm/helm) (`helm`)
+- [LSP Mode](https://github.com/emacs-lsp/lsp-mode) (`lsp-mode`)
 - [Org mode](https://orgmode.org/) (`org`)
   - [org-trello](http://org-trello.github.io/) (`org-trello`)
+- [which-key](https://github.com/justbur/emacs-which-key) (`which-key`)
 
 ## Languages
 

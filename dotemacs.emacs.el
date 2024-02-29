@@ -5,7 +5,7 @@
 ;
 ; Revision History
 ; ----------------
-; 2024.02.28 Adds Flycheck
+; 2024.02.28 Adds Flycheck, which-key, lsp-mode with Python and Ruby
 ; 2024.02.21 In Emacs >= v28, use (global-display-line-numbers-mode) instead of (global-linum-mode)
 ; 2022.10.25 Binds (C-c b) to manually invoke 'blacken-buffer
 ; 2022.09.16 Adds Python Black support via blacken
@@ -709,6 +709,8 @@ There are two things you can do about this warning:
      ("\\.pp$" . puppet-mode)
      ;; Python mode
      ("\\.py$" . python-mode)
+     ;; Ruby mode
+     ("\\.py$" . ruby-mode)
      ;; Scala mode
      ("\\.sbt$" . scala-mode)
      ("\\.scala$" . scala-mode)
@@ -735,6 +737,7 @@ There are two things you can do about this warning:
 (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(autoload 'python-mode "python-mode" "Python mode" t)  ;; built-in to Emacs
 (autoload 'puppet-mode "puppet-mode" "Puppet mode" t)
+;(autoload 'ruby-mode "ruby-mode" "Ruby mode" t)  ;; built-in to Emacs
 (autoload 'scala-mode "scala-mode2" "Scala mode" t)
 (autoload 'typescript-mode "typescript-mode" "TypeScript mode" t)
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
@@ -757,6 +760,7 @@ There are two things you can do about this warning:
     ;jsx-mode-hook
 	php-mode-hook
 	python-mode-hook
+	ruby-mode-hook
 	verilog-mode-hook
 	visual-basic-mode-hook
 	yaml-mode-hook
@@ -857,14 +861,14 @@ There are two things you can do about this warning:
 ; Page Up and Down remembers cursor position
 (setq scroll-preserve-screen-position t)
 
-(global-set-key "\C-o" "\ev")                       ; scroll up
+(global-set-key "\C-o" "\ev")                       ; scroll up, C-* keys are repeatable while \e-* and M-* are not
 
 
 ; C-c * shortcuts for common operations
 (global-set-key "\C-cb"    'blacken-buffer)          ; for when blacken-on-save somehow doesn't work
 (global-set-key "\C-ci"    'indent-region)
-(global-set-key "\C-cm"    'set-mark-command)        ; for when the OS overrides ^-SPC
-(global-set-key "\C-cl"    'set-mark-command)        ; for when the OS overrides ^-SPC + another Emacs program overrides 'C-c m'
+(global-set-key "\C-cm"    'set-mark-command)        ; for when the OS (e.g. iOS SSH) overrides ^-SPC
+(global-set-key "\C-cl"    'set-mark-command)        ; for when the OSf(e.g. iOS SSH) overrides ^-SPC + another Emacs program overrides 'C-c m'
 (global-set-key "\C-co"    'comment-region)
 (global-set-key "\C-cu"    'uncomment-region)
 (global-set-key "\C-cs"    'sort-lines)
@@ -956,12 +960,12 @@ There are two things you can do about this warning:
 
 ; Select from the completion list with Mouse-1
 (add-hook 'completion-list-mode-hook
-  '(lambda() (define-key completion-list-mode-map [down-mouse-1]
+  #'(lambda() (define-key completion-list-mode-map [down-mouse-1]
                'mouse-choose-completion)))
 
 ; Select from the Buffer Menu with Mouse-1
 (add-hook 'Buffer-menu-mode-hook
-  '(lambda() (define-key Buffer-menu-mode-map [down-mouse-1]
+  #'(lambda() (define-key Buffer-menu-mode-map [down-mouse-1]
                'Buffer-menu-mouse-select)))
 
 ; Mouse-2 shows context sensitive menu
@@ -1118,16 +1122,23 @@ There are two things you can do about this warning:
 ;--- Helm -----------------------------------------------------------------
 ; By:     jontsai
 ; Date:   2019.05.09
-; Source: https://github.com/emacs-helm/helm/wiki
+; References:
+; - https://github.com/emacs-helm/helm/wiki
+; - https://github.com/thierryvolpiatto/emacs-config/blob/main/init-helm.el
+
 
 (with-eval-after-load "helm"
   ; keybindings to make Helm awesome
   (global-set-key (kbd "M-x") #'helm-M-x)
   (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
   (global-set-key (kbd "C-x C-f") #'helm-find-files)
+  (global-set-key (kbd "C-h d") #'helm-info-at-point)
+  (global-set-key (kbd "C-h i") #'helm-info)
   ; keybindings to override default Helm behavior and restore customary "tab completion"
   ; https://emacs.stackexchange.com/a/38235/16731
+  ; https://stackoverflow.com/a/12434028/865091
   ;(bind-key "M-Y" #'helm-end-of-buffer helm-map)
+  (defvar helm-map)
   (define-key helm-map (kbd "TAB") #'helm-execute-persistent-action)
   (define-key helm-map (kbd "<tab>") #'helm-execute-persistent-action)
   (define-key helm-map (kbd "C-z") #'helm-select-action))
@@ -1147,6 +1158,8 @@ There are two things you can do about this warning:
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 
+;---------------------------------------------------------------------------
+
 
 ;--- black -----------------------------------------------------------------
 ; By:     jontsai
@@ -1155,6 +1168,8 @@ There are two things you can do about this warning:
 
 (require 'blacken)
 (add-hook 'python-mode-hook 'blacken-mode)
+
+;---------------------------------------------------------------------------
 
 
 ;--- flycheck -----------------------------------------------------------------
@@ -1170,6 +1185,67 @@ There are two things you can do about this warning:
 ;;     :config
 ;;       (add-hook 'after-init-hook #'global-flycheck-mode))
 
+;---------------------------------------------------------------------------
+
+
+;--- lsp-mode with helm-lsp -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.02.28
+; References:
+; - https://github.com/jontsai/emacs-lsp-mode
+; - https://github.com/jontsai/emacs-helm-lsp
+; - https://emacs-lsp.github.io/lsp-mode/page/installation/#use-package
+
+;; (defvar lsp-keymap-prefix)
+;; (setq lsp-keymap-prefix "s-l")
+
+;; (require 'lsp-mode)
+
+;; ;; Defer LSP server startup (and DidOpen notifications) until the buffer is visible
+;; ;; (add-hook 'prog-mode-hook #'lsp)
+;; ;; (add-hook 'prog-mode-hook #'lsp-deferred)
+;; (add-hook 'python-mode #'lsp-deferred)
+;; (add-hook 'ruby-mode #'lsp-deferred))
+
+(use-package lsp-mode
+    :init
+    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+    (setq lsp-keymap-prefix "C-c k")
+    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+              ;; (XXX-mode . lsp)
+              ;; (python-mode . lsp)
+              ;; (ruby-mode . lsp)
+              ;; (XXX-mode . lsp-deferred)
+              (python-mode . lsp-deferred)
+              (ruby-mode . lsp-deferred)
+              ;; if you want which-key integration
+              (lsp-mode . lsp-enable-which-key-integration))
+    ;; :commands lsp
+    :commands (lsp lsp-deferred)
+    )
+
+;; optional extensions to pair with LSP
+(use-package helm-lsp :commands helm-lsp-workspace-symbol) ; Helm, yes, we love it!
+;; (use-package lsp-ui :commands lsp-ui-mode) ; lsp-ui does not work well with emacs-nox
+;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol) ; Ivy
+;; (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+;; (use-package dap-mode) ; For debugger
+;; (use-package dap-LANGUAGE) ; to load the dap adapter for your language
+
+;---------------------------------------------------------------------------
+
+
+;--- which-key -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.02.28
+; Source: https://github.com/jontsai/emacs-which-key
+
+(use-package which-key
+    :config
+    (which-key-mode))
+
+;---------------------------------------------------------------------------
+
 
 ;--- user-specific emacs -----------------------------------------------------------------
 ; By:     jontsai
@@ -1180,6 +1256,8 @@ There are two things you can do about this warning:
 (condition-case nil
     (load (getenv "USER"))
     (error nil))
+
+;---------------------------------------------------------------------------
 
 
 ;--- load custom directory with saved macros -----------------------------------------------------------------
@@ -1195,6 +1273,8 @@ There are two things you can do about this warning:
 
 (require 'load-directory)
 (load-directory "~/.emacs.d/custom")
+
+;---------------------------------------------------------------------------
 
 
 ;--- Set Custom Variables -----------------------------------------------------------------

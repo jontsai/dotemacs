@@ -49,3 +49,9 @@
 [submodule "flycheck"]
 	path = flycheck
 	url = https://github.com/jontsai/emacs-flycheck
+[submodule "lsp-mode"]
+	path = lsp-mode
+	url = https://github.com/jontsai/emacs-lsp-mode
+[submodule "dash"]
+	path = dash
+	url = https://github.com/jontsai/dash.el
