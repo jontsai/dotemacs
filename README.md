@@ -50,6 +50,8 @@ no longer.
 
 ## Languages
 
+- [Python](https://www.python.org/)
+- [Ruby](https://www.ruby-lang.org/)
 - `javascript-mode` is now `js-mode` and included in Emacs versions >= 23.2
   - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - http://www.emacswiki.org/emacs/JavaScriptMode
 - Others in [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
