@@ -35,9 +35,9 @@ Installation of these dependencies happens automatically with `make`.
 
 Previously, the steps were:
 
-1. Fetch the latest MELPA package list:
+1. Fetch the latest MELPA package list:  
    `M-x package-refresh-contents`
-1. For each of these, run:
+1. For each of these, run:  
    `M-x package-install <package-name>`
 
 ### Deprecated Dependencies
