@@ -8,9 +8,11 @@
 ;; Install Dependencies
 
 (package-install 'company)
+(package-install 'compat)
 (package-install 'dash)
 (package-install 'flycheck)
 (package-install 'helm)
+(package-install 'keycast)
 (package-install 'which-key)
 
 ;; Optional Modules for Productivity

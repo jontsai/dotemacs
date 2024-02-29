@@ -17,7 +17,7 @@ do
     popd
 done
 
-FILES=`cat files.txt custom_elc_files.txt`
+FILES=`cat files.txt custom_elc_files.txt | grep -v "^#.*" --color=never`
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file

@@ -1,10 +1,13 @@
+dotemacs.emacs
+# Common
 highlight-current-line
 load-directory
-dotemacs.emacs
 editorconfig/editorconfig-core
 editorconfig/editorconfig-core-handle
 editorconfig/editorconfig-fnmatch
 editorconfig/editorconfig
+# Python
 blacken/blacken
-prettier-js/prettier-js
 py-isort/py-isort
+# JavaScript
+prettier-js/prettier-js

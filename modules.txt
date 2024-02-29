@@ -3,6 +3,7 @@ async
 coffee-mode
 csharp-mode
 editorconfig
+keycast
 lua-mode
 php-mode
 popup

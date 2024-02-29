@@ -7,7 +7,7 @@ An Emacs Lisp Package Archive such as [MELPA (Milkypostman's Emacs Lisp Archive)
 ## Installation
 
 1. `git clone https://github.com/jontsai/dotemacs` OR `git clone git@github.com:jontsai/dotemacs.git`
-1. `make install`
+1. `make` (See [Makefile](Makefile))
 1. Profit
 
 ## Utilities
@@ -18,19 +18,27 @@ An Emacs Lisp Package Archive such as [MELPA (Milkypostman's Emacs Lisp Archive)
 
 ## Dependency Emacs Packages
 
-Fetch the latest MELPA package list:
-
-  `M-x package-refresh-contents`
-
-For each of these, run `M-x package-install <package-name>`
+This Emacs configuration uses the following Emacs packages:
 
 - [Company](https://company-mode.github.io/) (`company`)
 - [Dash](https://github.com/magnars/dash.el) (`dash`)
 - [Flycheck](https://github.com/jontsai/emacs-flycheck) (`flycheck`)
 - [Helm](https://github.com/emacs-helm/helm) (`helm`)
+- [Keycast](https://github.com/jontsai/emacs-keycast) (`keycast`)
 - [Org mode](https://orgmode.org/) (`org`)
   - [org-trello](http://org-trello.github.io/) (`org-trello`)
 - [which-key](https://github.com/justbur/emacs-which-key) (`which-key`)
+
+### Installation
+
+Installation of these dependencies happens automatically with `make`.
+
+Previously, the steps were:
+
+1. Fetch the latest MELPA package list:
+   `M-x package-refresh-contents`
+1. For each of these, run:
+   `M-x package-install <package-name>`
 
 ### Deprecated Dependencies
 

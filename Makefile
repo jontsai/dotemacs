@@ -1,10 +1,10 @@
 all: update dependencies compile install
 
-dependencies:
-	emacs --batch --load dependencies.el
-
 update:
 	git submodule update --init --recursive
+
+dependencies:
+	emacs --batch --load dependencies.el
 
 compile:
 	./byte-compile.sh

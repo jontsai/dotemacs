@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2024.02.29 Leap day change! Adds keycast, keycast-tab-bar-mode
 ; 2024.02.28-2 Replace lsp-mode with eglot, company
 ; 2024.02.28-1 Adds Flycheck, which-key, lsp-mode + helm-lsp with Python and Ruby
 ; 2024.02.21 In Emacs >= v28, use (global-display-line-numbers-mode) instead of (global-linum-mode)
@@ -1169,6 +1170,28 @@ There are two things you can do about this warning:
 
 (require 'blacken)
 (add-hook 'python-mode-hook 'blacken-mode)
+
+;---------------------------------------------------------------------------
+
+
+;--- keycast -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.02.29
+; References:
+; - https://github.com/tarsius/keycast
+; - https://www.emacswiki.org/emacs/KeyCast
+
+;;(package-install 'keycast)
+;; (keycast-mode-line-mode)
+;; (keycast-header-line-mode)
+(keycast-tab-bar-mode)
+;; (keycast-log-mode)
+(setq keycast-log-format "%-18K%C%R\n"
+    keycast-remove-tail-elements nil
+    keycast-log-frame-alist '((inhibit-switch-frame . t)
+                                 (pop-up-frame-parameters . ((font . "DejaVu Sans Mono-12")
+                                                                (minibuffer . nil)))))
+(push '(self-insert-command nil nil) keycast-substitute-alist)
 
 ;---------------------------------------------------------------------------
 
