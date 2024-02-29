@@ -5,7 +5,8 @@
 ;
 ; Revision History
 ; ----------------
-; 2024.02.28 Adds Flycheck, which-key, lsp-mode with Python and Ruby
+; 2024.02.28-2 Replace lsp-mode with eglot, company
+; 2024.02.28-1 Adds Flycheck, which-key, lsp-mode + helm-lsp with Python and Ruby
 ; 2024.02.21 In Emacs >= v28, use (global-display-line-numbers-mode) instead of (global-linum-mode)
 ; 2022.10.25 Binds (C-c b) to manually invoke 'blacken-buffer
 ; 2022.09.16 Adds Python Black support via blacken
@@ -1172,6 +1173,25 @@ There are two things you can do about this warning:
 ;---------------------------------------------------------------------------
 
 
+;--- eglot + company -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.02.28
+; References:
+; - https://github.com/joaotavora/eglot
+; - https://whatacold.io/blog/2022-01-22-emacs-eglot-lsp/
+; - https://company-mode.github.io/
+
+(global-company-mode)
+
+(require 'eglot)
+(define-key eglot-mode-map (kbd "C-c <tab>") #'company-complete) ; initiate the completion manually
+(define-key eglot-mode-map (kbd "C-c e f n") #'flymake-goto-next-error)
+(define-key eglot-mode-map (kbd "C-c e f p") #'flymake-goto-prev-error)
+(define-key eglot-mode-map (kbd "C-c e r") #'eglot-rename)
+
+;---------------------------------------------------------------------------
+
+
 ;--- flycheck -----------------------------------------------------------------
 ; By:     jontsai
 ; Date:   2024.02.28
@@ -1184,53 +1204,6 @@ There are two things you can do about this warning:
 ;;     :ensure t
 ;;     :config
 ;;       (add-hook 'after-init-hook #'global-flycheck-mode))
-
-;---------------------------------------------------------------------------
-
-
-;--- lsp-mode with helm-lsp -----------------------------------------------------------------
-; By:     jontsai
-; Date:   2024.02.28
-; References:
-; - https://github.com/jontsai/emacs-lsp-mode
-; - https://github.com/jontsai/emacs-helm-lsp
-; - https://emacs-lsp.github.io/lsp-mode/page/installation/#use-package
-
-;; (defvar lsp-keymap-prefix)
-;; (setq lsp-keymap-prefix "s-l")
-
-;; (require 'lsp-mode)
-
-;; ;; Defer LSP server startup (and DidOpen notifications) until the buffer is visible
-;; ;; (add-hook 'prog-mode-hook #'lsp)
-;; ;; (add-hook 'prog-mode-hook #'lsp-deferred)
-;; (add-hook 'python-mode #'lsp-deferred)
-;; (add-hook 'ruby-mode #'lsp-deferred))
-
-(use-package lsp-mode
-    :init
-    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-    (setq lsp-keymap-prefix "C-c k")
-    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-              ;; (XXX-mode . lsp)
-              ;; (python-mode . lsp)
-              ;; (ruby-mode . lsp)
-              ;; (XXX-mode . lsp-deferred)
-              (python-mode . lsp-deferred)
-              (ruby-mode . lsp-deferred)
-              ;; if you want which-key integration
-              (lsp-mode . lsp-enable-which-key-integration))
-    ;; :commands lsp
-    :commands (lsp lsp-deferred)
-    )
-
-;; optional extensions to pair with LSP
-(use-package helm-lsp :commands helm-lsp-workspace-symbol) ; Helm, yes, we love it!
-;; (use-package lsp-ui :commands lsp-ui-mode) ; lsp-ui does not work well with emacs-nox
-;; (use-package lsp-ivy :commands lsp-ivy-workspace-symbol) ; Ivy
-;; (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-;; (use-package dap-mode) ; For debugger
-;; (use-package dap-LANGUAGE) ; to load the dap adapter for your language
 
 ;---------------------------------------------------------------------------
 

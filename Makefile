@@ -1,4 +1,7 @@
-all: update compile install
+all: update dependencies compile install
+
+dependencies:
+	emacs --batch --load dependencies.el
 
 update:
 	git submodule update --init --recursive

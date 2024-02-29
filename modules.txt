@@ -2,10 +2,7 @@ apex-mode
 async
 coffee-mode
 csharp-mode
-dash
 editorconfig
-flycheck
-lsp-mode
 lua-mode
 php-mode
 popup

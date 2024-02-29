@@ -24,12 +24,21 @@ Fetch the latest MELPA package list:
 
 For each of these, run `M-x package-install <package-name>`
 
+- [Company](https://company-mode.github.io/) (`company`)
 - [Dash](https://github.com/magnars/dash.el) (`dash`)
+- [Flycheck](https://github.com/jontsai/emacs-flycheck) (`flycheck`)
 - [Helm](https://github.com/emacs-helm/helm) (`helm`)
-- [LSP Mode](https://github.com/emacs-lsp/lsp-mode) (`lsp-mode`)
 - [Org mode](https://orgmode.org/) (`org`)
   - [org-trello](http://org-trello.github.io/) (`org-trello`)
 - [which-key](https://github.com/justbur/emacs-which-key) (`which-key`)
+
+### Deprecated Dependencies
+
+These packages were previously used by this Emacs configuration, but
+no longer.
+
+- [Helm LSP](https://github.com/jontsai/emacs-helm-lsp) (`helm-lsp`)
+- [LSP Mode](https://github.com/emacs-lsp/lsp-mode) (`lsp-mode`)
 
 ## Languages
 

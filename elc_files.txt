@@ -1,15 +1,12 @@
 async/async
 blacken/blacken
-dash/dash
 editorconfig/editorconfig
 editorconfig/editorconfig-core
 editorconfig/editorconfig-core-handle
 editorconfig/editorconfig-fnmatch
-flycheck/flycheck
 helm/helm*.elc
 highlight-current-line
 load-directory
-lsp-mode/lsp-mode
 popup/popup
 prettier-js/prettier-js
 py-isort/py-isort
