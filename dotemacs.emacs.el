@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2024.03.05 Adds emacs-direnv
 ; 2024.02.29 Leap day change! Adds keycast, keycast-tab-bar-mode
 ; 2024.02.28-2 Replace lsp-mode with eglot, company
 ; 2024.02.28-1 Adds Flycheck, which-key, lsp-mode + helm-lsp with Python and Ruby
@@ -1239,6 +1240,18 @@ There are two things you can do about this warning:
 (use-package which-key
     :config
     (which-key-mode))
+
+;---------------------------------------------------------------------------
+
+
+;--- direnv -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.03.05
+; Source: https://github.com/jontsai/emacs-direnv
+
+(use-package direnv
+    :config
+    (direnv-mode))
 
 ;---------------------------------------------------------------------------
 

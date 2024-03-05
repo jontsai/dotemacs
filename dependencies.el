@@ -10,6 +10,7 @@
 (package-install 'company)
 (package-install 'compat)
 (package-install 'dash)
+(package-install 'direnv)
 (package-install 'flycheck)
 (package-install 'helm)
 (package-install 'keycast)
