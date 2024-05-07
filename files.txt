@@ -11,3 +11,6 @@ blacken/blacken
 py-isort/py-isort
 # JavaScript
 prettier-js/prettier-js
+# GitHub Copilot
+copilot/copilot
+copilot/copilot-balancer

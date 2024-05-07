@@ -1,5 +1,6 @@
 async/async
 blacken/blacken
+copilot/copilot*.elc
 editorconfig/editorconfig
 editorconfig/editorconfig-core
 editorconfig/editorconfig-core-handle

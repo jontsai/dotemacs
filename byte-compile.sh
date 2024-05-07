@@ -21,6 +21,6 @@ FILES=`cat files.txt custom_elc_files.txt | grep -v "^#.*" --color=never`
 for file in $FILES
 do
     echo 'Compiling Emacs module: ' $file
-    LOAD_PATH="-L ./ -L blacken -L editorconfig -L prettier-js -L py-isort"
-    emacs -batch ${LOAD_PATH} -f batch-byte-compile ./ $file.el
+    LOAD_PATH="-L ./ -L blacken -L copilot -L editorconfig -L prettier-js -L py-isort"
+    emacs --batch ${LOAD_PATH} --eval "(package-initialize)" -f batch-byte-compile ./ $file.el
 done

@@ -5,6 +5,7 @@
 ;
 ; Revision History
 ; ----------------
+; 2024.05.07 Adds Copilot.el for GitHub Copilot
 ; 2024.03.05 Adds emacs-direnv
 ; 2024.02.29 Leap day change! Adds keycast, keycast-tab-bar-mode
 ; 2024.02.28-2 Replace lsp-mode with eglot, company
@@ -1240,6 +1241,22 @@ There are two things you can do about this warning:
 (use-package which-key
     :config
     (which-key-mode))
+
+;---------------------------------------------------------------------------
+
+
+;--- copilot -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.05.07
+; Source: https://github.com/jontsai/copilot.el
+
+(use-package copilot)
+(require 'copilot)
+
+(add-hook 'prog-mode-hook 'copilot-mode)
+
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
 ;---------------------------------------------------------------------------
 
