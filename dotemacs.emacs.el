@@ -5,6 +5,9 @@
 ;
 ; Revision History
 ; ----------------
+; 2024.06.06-3 Uses `kbd` to define custom keybindings for readability
+; 2024.06.06-2 Adds toggle-line-numbers function and keybinding (C-c l)
+; 2024.06.06-1 Changes alternate binding for set-mark-command to (C-c @)
 ; 2024.05.07 Adds Copilot.el for GitHub Copilot
 ; 2024.03.05 Adds emacs-direnv
 ; 2024.02.29 Leap day change! Adds keycast, keycast-tab-bar-mode
@@ -820,6 +823,25 @@ There are two things you can do about this warning:
 ;---------------------------------------------------------------------------
 
 
+;--- toggle line numbers -----------------------------------------------------------------
+; By:     jontsai
+; Date:   2024.06.06
+; Backwards compatibility to toggle line numbers
+
+(defun toggle-line-numbers ()
+    "Toggle line numbers on and off."
+    (interactive)
+    (if (boundp 'display-line-numbers)
+        (if display-line-numbers
+            (display-line-numbers-mode 0)
+            (display-line-numbers-mode 1))
+        (if (bound-and-true-p linum-mode)
+            (linum-mode 0)
+                  (linum-mode 1))))
+
+;---------------------------------------------------------------------------
+
+
 ;--- Key Bindings ----------------------------------------------------------
 ; By:     Richard Shiao
 ; Date:   2000/06/01
@@ -869,14 +891,15 @@ There are two things you can do about this warning:
 
 
 ; C-c * shortcuts for common operations
-(global-set-key "\C-cb"    'blacken-buffer)          ; for when blacken-on-save somehow doesn't work
-(global-set-key "\C-ci"    'indent-region)
-(global-set-key "\C-cm"    'set-mark-command)        ; for when the OS (e.g. iOS SSH) overrides ^-SPC
-(global-set-key "\C-cl"    'set-mark-command)        ; for when the OSf(e.g. iOS SSH) overrides ^-SPC + another Emacs program overrides 'C-c m'
-(global-set-key "\C-co"    'comment-region)
-(global-set-key "\C-cu"    'uncomment-region)
-(global-set-key "\C-cs"    'sort-lines)
-(global-set-key "\C-cq"    'query-replace)
+(global-set-key (kbd "C-c b")    'blacken-buffer)          ; for when blacken-on-save somehow doesn't work
+(global-set-key (kbd "C-c i")    'indent-region)
+(global-set-key (kbd "C-c @")    'set-mark-command)        ; for when the OS (e.g. Prompt SSH on iOS) overrides ^-SPC
+(global-set-key (kbd "C-c l")    'toggle-line-numbers)
+(global-set-key (kbd "<f9>")     'toggle-line-numbers)
+(global-set-key (kbd "C-c o")    'comment-region)
+(global-set-key (kbd "C-c u")    'uncomment-region)
+(global-set-key (kbd "C-c s")    'sort-lines)
+(global-set-key (kbd "C-c q")    'query-replace)
 ; disabled by Jonathan Tsai 2003/05/16
 ;(global-set-key "\C-cx"    "\C-w")                  ; cut
 ;(global-set-key "\C-c\C-x" "\C-w")                  ; cut
